@@ -1,4 +1,4 @@
-function bodyParser(req, cb) {
+function bodyParser(req, callback) {
   let body = "";
 
   req.on("data", (chunk) => {
@@ -8,7 +8,7 @@ function bodyParser(req, cb) {
   req.on("end", () => {
     body = JSON.parse(body);
     req.body = body;
-    cb();
+    callback();
   });
 }
 
